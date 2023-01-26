@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const users = [
+    { name : "sarah" , comment : "j'aime ce poste <3" },
+    { name : "monya" , comment : "le poste est null :(" },
+    { name : "carlos" , comment : "salut l'algérie" }
+    ]
+MoodDetect( users )
+function MoodDetect( liste ){
+    let newlist=liste.map(function(user){
+        if(user.comment.includes("<3")){
+            return { name : user.name, etat : "heureux" }
+        }
+        else {
+            if(user.comment.includes(":(")){
+                return { name : user.name, etat : "triste" }
+            }
+            else {return { name : user.name, etat : "neutre" }}
+        }
+    })
+    console.log(newlist)
+}
+</script>
+</html>
